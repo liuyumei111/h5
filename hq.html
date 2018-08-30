@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>红旗H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--loading-->
+    <script src="js/pace.js"></script>
+    <script>
+        // loading加载器
+        Pace.options = {
+            ajax: false,
+            document: false,
+            eventLag: false,
+        };
+        Pace.on('done', function () {
+            document.getElementById("loading").style.display = "none";
+        })
+    </script>
+    <!--处理rem单位计算-->
+    <script type="text/javascript">
+        !function () {
+            var a = function () {
+                var n = window.document.documentElement.clientWidth || 320;
+                console.log(n)
+                n > 750 && (n = 750),
+                    window.document.documentElement.style.fontSize = n / 8 + "px"
+            };
+            window.document.addEventListener("DOMContentLoaded", a, false);
+            var o = "orientationchange" in window ? "orientationchange" : "resize";
+            window.addEventListener(o, a, false);
+        }();
+    </script>
+    <style>
+        #loading {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background: #fff;
+            z-index: 9999;
+        }
+
+        #loading > img {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            width: 100px;
+        }
+    </style>
+    <!--css-->
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/hq-style.css">
+</head>
+
+<body>
+<div id="loading">
+    <img src="images/loading1.gif" alt="">
+</div>
+
+<div id="dowebok">
+
+    <!--slider1-->
+    <div class="section section-slider1">
+        <div class="slider1-header">
+            <img src="images/logo1.png" alt="">
+        </div>
+        <div class="slider1-text">
+            <p>时代经典，</p>
+            <p>红旗60年终身承诺</p>
+            <ul>
+                <li>终身免费保修</li>
+                |
+                <li>终身免费救援</li>
+                |
+                <li>终身免费送取</li>
+                |
+                <li>+1二手车保值计划</li>
+            </ul>
+            <div class="slide1-choose">
+                <div class="slide1-choose-left">
+                    <img src="images/img1.png" alt="">
+                    <a href="javaScript:$.fn.fullpage.moveTo(2);">预约试驾</a>
+                </div>
+                <div class="slide1-choose-right">
+                    <img src="images/img1.png" alt="">
+                    <a href="http://www.faw-hongqi.com.cn/wap">访问官网</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--slider2-->
+    <div class="section section-slider2">
+        <div class="slider2-header">
+            <img src="images/slide2.png" alt="">
+        </div>
+        <p class="slide2-title">预约试驾</p>
+        <div class="slider2-row1">
+            <input type="text" placeholder="姓名" class="flex1 mar-r-1 name">
+            <select name="cars" class="flex1 mar-l-1 sex">
+                <option value="volvo">性别</option>
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+        </div>
+        <div class="slider2-row2">
+            <input type="text" placeholder="手机号" class="input-row tpl" maxlength="11">
+        </div>
+        <div class="slider2-row2">
+            <select name="cars" class="input-row model cars">
+                <option value="volvo">意向车型</option>
+                <option value="红旗H7">2018款-红旗H7-1.8T-舒适版</option>
+                <option value="红旗L5">2018款-红旗H7-2.0T-精英版</option>
+                <option value="红旗H5">2018款-红旗H7-2.0T-旗舰版</option>
+                <option value="红旗H5">2018款-红旗H7-3.0L-尊崇版</option>
+                <option value="红旗H5">2018款-红旗H5-1.8T-型动版</option>
+                <option value="红旗H5">2018款-红旗H5-1.8T-智联灵动版</option>
+                <option value="红旗H5">2018款-红旗H5-1.8T-智联韵动版</option>
+                <option value="红旗H5">2018款-红旗H5-1.8T-智联享动版</option>
+                <option value="红旗H5">2018款-红旗H5-1.8T-智联御动版</option>
+            </select>
+        </div>
+        <div class="slider2-row1">
+            <select name="cars" class="flex1 mar-r-1 sheng" id="sheng">
+                <option value="volvo">请选择省份</option>
+            </select>
+            <select name="cars" class="flex1 mar-l-1 shi" id="shi">
+                <option value="volvo">请选择城市</option>
+            </select>
+        </div>
+        <div class="slider2-row2">
+            <select name="cars" class="input-row dian">
+                <option value="volvo">请选择经销店</option>
+            </select>
+        </div>
+        <div class="slider2-btn">
+            <img src="images/btn.png" alt="">
+            <span class="slider2-btn-text">确认提交</span>
+        </div>
+        <div class="slider2-row2">
+            <input type="checkbox" name="agree" class="agree">我同意《<a class="statement" href="javascript:;">个人信息保护声明</a>》
+        </div>
+        <div class="slider2-row2" style="padding:0 10%">
+            <p>您的个人资料有可能会提交至红旗厂商的经销商或汽车之家客服，与您进一步沟通试驾，购车等事宜。</p>
+        </div>
+    </div>
+    <!--slider3-->
+    <div class="section section-slider3">
+        <div class="slider3-header">
+            <!--<img src="images/logo2.png" alt="">-->
+            <a href="javaScript:$.fn.fullpage.moveTo(2);">预约试驾</a>
+            <img src="images/logo1.png" alt="">
+        </div>
+        <div class="slider3-swiper">
+            <!-- Swiper -->
+            <div class="swiper-container1 ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/acc.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/boss.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/phone.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper3-header">
+            <ul class="clear">
+                <li><a href="JavaScript:;">红旗H5:</a></li>
+                <li><a href="JavaScript:swiper1.slideTo(0);">ACC自适应系统</a></li>
+                <li><a href="JavaScript:swiper1.slideTo(1);">顶级Boss音响</a></li>
+                <li><a href="JavaScript:swiper1.slideTo(2);">手机导航</a></li>
+            </ul>
+        </div>
+        <div class="slider3-swiper">
+            <!-- Swiper -->
+            <div class="swiper-container2 ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/wind.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/security.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/warning.jpg" alt="" style="width: 100%;height: 3rem">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper3-header">
+            <ul class="clear">
+                <li><a href="JavaScript:;">红旗H7:</a></li>
+                <li><a href="JavaScript:swiper2.slideTo(0);">自动摆风三温区空调</a></li>
+                <li><a href="JavaScript:swiper2.slideTo(1);">多种安全设备</a></li>
+                <li><a href="JavaScript:swiper2.slideTo(2);">预警系统</a></li>
+            </ul>
+        </div>
+        <div class="slider3-Attention">
+            <img src="images/line.png" alt="">
+            <div class="slider3-Attention-text">
+                <img src="images/u74.png" alt="">
+                <span>部分车型亮点</span>
+            </div>
+            <img src="images/line.png" alt="">
+        </div>
+    </div>
+    <!--slider4-->
+    <div class="section section-slider4">
+        <div class="slider3-header">
+            <!--<img src="images/logo2.png" alt="">-->
+            <span>预约试驾</span>
+            <img src="images/logo1.png" alt="">
+        </div>
+        <div class="slider4-policy">
+            <img src="images/u225.png" alt="">
+            <span>购车政策</span>
+            <img src="images/u225.png" alt="">
+
+        </div>
+        <div class="slider4-choice">
+            <div class="choice-title">
+                <span class="choice-title-span choice-title-active">红旗H5</span>
+                <span class="choice-title-span">红旗H7</span>
+            </div>
+            <ul class="choice-con">
+                <li>
+                    <span>H5</span>
+                    <span>非限购地区(元)</span>
+                    <span>限购地区(元)</span>
+                </li>
+                <li>
+                    <span>非本品牌置换</span>
+                    <span>5000</span>
+                    <span>7000</span>
+                </li>
+                <li>
+                    <span>本品牌置换</span>
+                    <span>8000</span>
+                    <span>10000</span>
+                </li>
+            </ul>
+            <ul class="choice-con" style="display: none">
+                <li>
+                    <span>H7</span>
+                    <span>非限购地区(元)</span>
+                    <span>限购地区(元)</span>
+                </li>
+                <li>
+                    <span>非本品牌置换</span>
+                    <span>10000</span>
+                    <span>15000</span>
+                </li>
+                <li>
+                    <span>本品牌置换</span>
+                    <span>12000</span>
+                    <span>15000</span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="slider4-zhu">
+            <span>
+                注：是否属于限购地区，以新车落籍城市为准。<br>（限购城市：北京市，上海市，天津市，广州市，杭州市，深圳市，贵阳市；本品牌范围：红旗，奔腾，欧朗，森雅，夏利，威志，骏派，一汽大众，一汽奥迪，一汽丰田，一汽马自达）
+            </span>
+        </div>
+        <div class="slider4-date">
+            <span class="box-shadow">政策执行周期</span>
+            <p>
+                2018年7月1日-2018年9月30日，以新发车票日期为准。补贴金额按金额上表执行
+            </p>
+
+        </div>
+        <div class="slider4-condition">
+            <span class="box-shadow">服务政策</span>
+            <p>
+                1. 红旗+1二手车保值计划：客户出售红旗车辆时，红旗体验中心参考高保值率豪华车，在同级别，同车况条件下，以最高保值率加1元的价格收购客户车辆。
+            </p>
+            <p>
+                2. “终身免费保修”，“终身免费救援”，“终身免费取送”三项超级服务。
+            </p>
+            <p>
+                3. 4年10万公里免费保养
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<!--底部箭头上滑效果-->
+<div class="arrow-box">
+    <img src="images/arrow.png" id="array">
+</div>
+
+<!--js-->
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/json.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
